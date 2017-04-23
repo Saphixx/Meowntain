@@ -101,6 +101,8 @@
     </Content>
     <Content Include="Page.Master" />
     <Content Include="TitlePage.aspx" />
+    <Content Include="CreateUser.aspx" />
+    <Content Include="AddInventory.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,6 +128,20 @@
     </Compile>
     <Compile Include="TitlePage.aspx.designer.cs">
       <DependentUpon>TitlePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddInventory.aspx.cs">
+      <DependentUpon>AddInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddInventory.aspx.designer.cs">
+      <DependentUpon>AddInventory.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
