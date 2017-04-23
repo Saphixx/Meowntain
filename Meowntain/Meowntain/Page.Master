@@ -37,7 +37,7 @@
         <div class="container">
             <label><b>Username</b></label>
             <asp:TextBox placeholder="Enter Username" ID="uname" required runat="server" />
-
+            <br /> 
             <label><b>Password</b></label>
             <asp:TextBox type="password" placeholder="Enter Password" ID="psw" required runat="server" />    
         </div>
