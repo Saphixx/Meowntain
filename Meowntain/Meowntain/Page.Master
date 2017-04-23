@@ -20,12 +20,12 @@
         <!-- Navbar -->
         <div class="w3-top">
             <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-padding-large w3-white" runat="server" Text="Home"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server"></asp:HyperLink>
+                <asp:HyperLink CssClass="w3-bar-item w3-button w3-padding-large w3-white" runat="server" Text="Home" NavigateUrl="~/TitlePage.aspx"></asp:HyperLink>
+                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server" NavigateUrl="~/CreateUser.aspx"></asp:HyperLink>
                 <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server"></asp:HyperLink>
 
                 <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server"></asp:HyperLink>
+                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx"></asp:HyperLink>
                 <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Remove Inventory" runat="server"></asp:HyperLink>
             
                 <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -36,10 +36,10 @@
     <div class="modal-content animate">
         <div class="container">
             <label><b>Username</b></label>
-            <asp:TextBox placeholder="Enter Username" ID="uname" required runat="server" />
+            <asp:TextBox placeholder="Enter Username" ID="uname" runat="server" />
             <br /> 
             <label><b>Password</b></label>
-            <asp:TextBox type="password" placeholder="Enter Password" ID="psw" required runat="server" />    
+            <asp:TextBox type="password" placeholder="Enter Password" ID="psw" runat="server" />    
         </div>
 
         <div class="w3-bar w3-left-align w3-large">    
