@@ -17,7 +17,6 @@
                 </div>
 
                 <div class="w3-third w3-center">
-                    <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
                 </div>
             </div>
         </div>

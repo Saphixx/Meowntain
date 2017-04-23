@@ -30,26 +30,25 @@
             
                 <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
             </div>
-        </div>
+        </div> 
       
-<h2>Modal Login Form</h2>
-<div id="id01" class="modal modal-content animate">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+<div id="id01" class="modal">
+    <div class="modal-content animate">
+        <div class="container">
+            <label><b>Username</b></label>
+            <asp:TextBox placeholder="Enter Username" ID="uname" required runat="server" />
 
-    <div class="container">
-      <label><b>Username</b></label>
-      <asp:TextBox placeholder="Enter Username" ID="uname" required runat="server" />
+            <label><b>Password</b></label>
+            <asp:TextBox type="password" placeholder="Enter Password" ID="psw" required runat="server" />    
+        </div>
 
-      <label><b>Password</b></label>
-      <asp:TextBox type="password" placeholder="Enter Password" ID="psw" required runat="server" />
-        
-      <button type="submit">Login</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <div class="w3-bar w3-left-align w3-large">    
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" 
+                class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey" >Login</button>
+            
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" 
+                class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey w3-right" >Cancel</button>
+        </div>
     </div>
 </div>
 
@@ -68,11 +67,10 @@ window.onclick = function(event) {
         <asp:ContentPlaceHolder ID="cphMainContent" runat="server"></asp:ContentPlaceHolder>
 
         <!-- Footer -->
-        <footer class="w3-container w3-black w3-padding-64 w3-center w3-opacity">  
-            <div class="w3-xlarge w3-padding-32">
-                <h1 class="w3-margin w3-xlarge">Meowntain is brought to you by: Alex Harrison, Eric Sibley, and Gabriel Picarazzi.</h1>
-            </div>
-            <p>Special thanks to Onyx, Pumpkin, Mango, Misty, and Hans!</p>
+        <footer class="w3-container w3-black w3-padding-30 w3-center w3-opacity">  
+
+                <h1 class="w3-margin w3-small">Meowntain is brought to you by Alex Harrison, Eric Sibley, and Gabriel Picarazzi with special thanks to Onyx, Pumpkin, Mango, Misty, and Hans!</h1>
+
         </footer>
     </div>
     </form>
