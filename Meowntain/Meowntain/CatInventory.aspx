@@ -1,10 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CatInventory.aspx.cs" Inherits="Meowntain.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMainContent" runat="server">
-            <!-- Header -->
-        <header class="w3-container w3-red w3-center" style="padding:128px 16px">
-            <h1 class="w3-margin w3-jumbo">Meowntain</h1>
-            <p class="w3-xlarge">Cat Shelter</p>
-        </header>
         
         <!-- First Grid -->
         <div class="w3-row-padding w3-padding-64 w3-container">

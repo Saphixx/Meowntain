@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddInvenStyle.css" />
+    <Content Include="ApproveAppointment.aspx" />
     <Content Include="CatInventory.aspx" />
     <Content Include="CreateUserStyle.css" />
     <Content Include="MasterStyle.css" />
@@ -109,6 +110,13 @@
     <Content Include="AddInventory.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApproveAppointment.aspx.cs">
+      <DependentUpon>ApproveAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveAppointment.aspx.designer.cs">
+      <DependentUpon>ApproveAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatInventory.aspx.cs">
       <DependentUpon>CatInventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
