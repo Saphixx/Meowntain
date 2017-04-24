@@ -25,12 +25,11 @@
                 <asp:HyperLink ID="hlCreateUser" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server" NavigateUrl="~/CreateUser.aspx"></asp:HyperLink>
                 <asp:HyperLink ID="hlViewInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server"></asp:HyperLink>
                 <!-- Admin only tabs -->
-                <asp:HyperLink ID="hlAppointments" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server"></asp:HyperLink>
-                <asp:HyperLink ID="hlAddInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx"></asp:HyperLink>
-                <asp:HyperLink ID="hlRemoveInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Remove Inventory" runat="server"></asp:HyperLink>
+                <asp:HyperLink ID="hlAppointments" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server" Visible="False"></asp:HyperLink>
+                <asp:HyperLink ID="hlAddInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx" Visible="False"></asp:HyperLink>
+                <asp:HyperLink ID="hlRemoveInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Remove Inventory" runat="server" Visible="False"></asp:HyperLink>
                 <!-- Log in/out button -->
                 <asp:Button ID="btnLogin" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" runat="server" Text="Login" OnClick="btnLogin_Click"></asp:Button>
-      <!--      <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
             </div>
         </div> 
 
@@ -51,18 +50,18 @@
                 </div>
             </div>
         </div>
+        
+        <script> // MOVE ALL THIS OUT
+        // Get the modal
+        var modal = document.getElementById('id01');
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
 
         <asp:ContentPlaceHolder ID="cphMainContent" runat="server"></asp:ContentPlaceHolder>
 

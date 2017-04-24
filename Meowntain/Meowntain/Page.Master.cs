@@ -12,7 +12,6 @@ namespace Meowntain
 {
     public partial class Page : System.Web.UI.MasterPage
     {
-        private static string tempUserID;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +19,12 @@ namespace Meowntain
             if (cookie != null)
             {
                 btnLogin.Text = "Logout";
+                if(cookie["isAdmin"] == "True")
+                {
+                    hlAppointments.Visible = true;
+                    hlAddInventory.Visible = true;
+                    hlRemoveInventory.Visible = true;
+                }
             }
             else
             {
@@ -35,24 +40,25 @@ namespace Meowntain
 
             SqlCommand command = new SqlCommand();
             command.CommandType = System.Data.CommandType.Text;
-            command.CommandText = "SELECT UserId FROM [User] WHERE Username = '" + input + "' AND Password = '" + input2 + "'";
+            command.CommandText = "SELECT UserId, isAdmin FROM [User] WHERE Username = '" + input + "' AND Password = '" + input2 + "'";
             command.Connection = db;
             db.Open();
 
-            Object temp = command.ExecuteScalar();
-            if (temp == null)
+            SqlDataReader temp = command.ExecuteReader();
+            if (temp.Read())
             {
-                Response.Redirect("~/AddInventory.aspx");
-            }
-            else
-            {
-                tempUserID = temp.ToString();
                 HttpCookie cookie = new HttpCookie("LoginInfo");
-                cookie["UserID"] = tempUserID;
+                cookie["UserID"] = temp["UserId"].ToString();
+                cookie["isAdmin"] = temp["isAdmin"].ToString();
+
                 Response.Cookies.Add(cookie);
                 id01.Attributes["style"] = "display: none;";
 
-                Response.Redirect("~/CreateUser.aspx");
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+                //Display an error message
             }
             
         }
