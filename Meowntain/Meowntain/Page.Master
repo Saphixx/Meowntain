@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="ModalStyle.css">
+    <link rel="stylesheet" href="MasterStyle.css">
 </head>
 
 <body>
@@ -63,9 +63,9 @@ window.onclick = function(event) {
     }
 }
 </script>
-
-        <asp:ContentPlaceHolder ID="cphMainContent" runat="server"></asp:ContentPlaceHolder>
-
+        <div class="contentHolder">
+            <asp:ContentPlaceHolder ID="cphMainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
         <!-- Footer -->
         <footer class="w3-container w3-black w3-padding-30 w3-center w3-opacity">  
 
