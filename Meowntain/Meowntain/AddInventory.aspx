@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="AddInventory.aspx.cs" Inherits="Meowntain.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMainContent" runat="server">
-    <div class="createUser">
-        <asp:TextBox ID="txtCatName" runat="server" class="formStyle formBox" placeholder="Cat Name"></asp:TextBox>
+    <link rel="stylesheet" href="AddInvenStyle.css">
+
+    <div class="formStyle">
+        <asp:TextBox ID="txtCatName" runat="server" class="itemStyle formBox" placeholder="Cat Name"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtDescription" runat="server" class="formStyle formBox descriptionBox" TextMode="MultiLine" placeholder="Cat Description"></asp:TextBox>
+        <asp:TextBox ID="txtDescription" runat="server" class="itemStyle formBox descriptionBox" TextMode="MultiLine" placeholder="Cat Description"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtDateTime" runat="server" class="formStyle" TextMode="DateTimeLocal" placeholder="Cat Description"></asp:TextBox>
+        <asp:TextBox ID="txtDateTime" runat="server" class="itemStyle" TextMode="DateTimeLocal"></asp:TextBox>
         <br />
         <asp:FileUpload ID="FileUpload1" runat="server" />
         <br />

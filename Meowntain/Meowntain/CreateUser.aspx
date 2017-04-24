@@ -1,19 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" UnobtrusiveValidationMode="None" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="Meowntain.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMainContent" runat="server">
-    <div class="createUser">
-        <asp:TextBox ID="txtFistName" runat="server" class="formInput" placeholder="First Name"></asp:TextBox>
+    <link rel="stylesheet" href="CreateUserStyle.css">
+
+    <div class="formStyle">
+        <asp:TextBox ID="txtFistName" runat="server" class="itemStyle" placeholder="First Name"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtLastName" runat="server" class="formInput" placeholder="Last Name"></asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" class="itemStyle" placeholder="Last Name"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtUserName" runat="server" class="formInput" placeholder="Username"></asp:TextBox>
+        <asp:TextBox ID="txtUserName" runat="server" class="itemStyle" placeholder="Username"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtEmail" runat="server" class="formInput" placeholder="Email"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" class="itemStyle" placeholder="Email"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtPhone" runat="server" class="formInput" placeholder="Phone Number"></asp:TextBox>
+        <asp:TextBox ID="txtPhone" runat="server" class="itemStyle" placeholder="Phone Number"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtPassword" runat="server" class="formInput" placeholder="Password" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" class="itemStyle" placeholder="Password" TextMode="Password"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtPasswordConfirmation" runat="server" class="formInput" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtPasswordConfirmation" runat="server" class="itemStyle" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
         <br />
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmail" ErrorMessage="*Email not formatted correctly" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         <br />
