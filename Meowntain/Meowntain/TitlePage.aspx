@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="TitlePage.aspx.cs" Inherits="Meowntain.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" UnobtrusiveValidationMode="None" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="TitlePage.aspx.cs" Inherits="Meowntain.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMainContent" runat="server">
     <!-- Header -->
     <header class="w3-container w3-center background" style="padding:128px 16px">
