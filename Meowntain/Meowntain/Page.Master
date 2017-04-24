@@ -11,19 +11,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="ModalStyle.css">
+    <link rel="stylesheet" href="MasterStyle.css">
 </head>
 
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MeowntainConnectionStringGabby %>" SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MeowntainConnectionString %>" SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
         <!-- Navbar -->
         <div class="w3-top">
             <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
                 <asp:HyperLink ID="hlTitlePage" CssClass="w3-bar-item w3-button w3-padding-large w3-white" runat="server" Text="Home" NavigateUrl="~/TitlePage.aspx"></asp:HyperLink>
                 <asp:HyperLink ID="hlCreateUser" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server" NavigateUrl="~/CreateUser.aspx"></asp:HyperLink>
-                <asp:HyperLink ID="hlViewInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server"></asp:HyperLink>
+                <asp:HyperLink ID="hlViewInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server" NavigateUrl="~/CatInventory.aspx"></asp:HyperLink>
                 <!-- Admin only tabs -->
                 <asp:HyperLink ID="hlAppointments" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server" Visible="False"></asp:HyperLink>
                 <asp:HyperLink ID="hlAddInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx" Visible="False"></asp:HyperLink>
