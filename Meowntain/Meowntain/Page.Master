@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="Meowntain.Page" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="Meowntain.Page" %>
 
 <!DOCTYPE html>
 
@@ -17,40 +17,40 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MeowntainConnectionStringGabby %>" SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
         <!-- Navbar -->
         <div class="w3-top">
             <div class="w3-bar w3-red w3-card-2 w3-left-align w3-large">
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-padding-large w3-white" runat="server" Text="Home" NavigateUrl="~/TitlePage.aspx"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server" NavigateUrl="~/CreateUser.aspx"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server"></asp:HyperLink>
-
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx"></asp:HyperLink>
-                <asp:HyperLink CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Remove Inventory" runat="server"></asp:HyperLink>
-            
-                <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                <asp:HyperLink ID="hlTitlePage" CssClass="w3-bar-item w3-button w3-padding-large w3-white" runat="server" Text="Home" NavigateUrl="~/TitlePage.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="hlCreateUser" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Create User" runat="server" NavigateUrl="~/CreateUser.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="hlViewInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="View Inventory" runat="server"></asp:HyperLink>
+                <!-- Admin only tabs -->
+                <asp:HyperLink ID="hlAppointments" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Appointments" runat="server"></asp:HyperLink>
+                <asp:HyperLink ID="hlAddInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Add Inventory" runat="server" NavigateUrl="~/AddInventory.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="hlRemoveInventory" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" Text="Remove Inventory" runat="server"></asp:HyperLink>
+                <!-- Log in/out button -->
+                <asp:Button ID="btnLogin" CssClass="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" runat="server" Text="Login" OnClick="btnLogin_Click"></asp:Button>
+      <!--      <button class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-right" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
             </div>
         </div> 
-      
-<div id="id01" class="modal">
-    <div class="modal-content animate">
-        <div class="container">
-            <label><b>Username</b></label>
-            <asp:TextBox placeholder="Enter Username" ID="uname" runat="server" />
-            <br /> 
-            <label><b>Password</b></label>
-            <asp:TextBox type="password" placeholder="Enter Password" ID="psw" runat="server" />    
-        </div>
 
-        <div class="w3-bar w3-left-align w3-large">    
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" 
-                class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey" >Login</button>
-            
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" 
-                class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey w3-right" >Cancel</button>
+        <div id="id01" class="modal" runat="server">
+            <div class="modal-content animate">
+                <div class="container">
+                    <label><b>Username</b></label>
+                    <asp:TextBox placeholder="Enter Username" ID="txtUsername" runat="server" />
+                    <br />
+                    <label><b>Password</b></label>
+                    <asp:TextBox placeholder="Enter Password" ID="txtPassword" runat="server" TextMode="Password" />    
+                </div>
+
+                <div class="w3-bar w3-left-align w3-large">   
+                    <asp:Button ID="btnSubmit" class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey" runat="server" Text="Login" OnClick="btnSubmit_Click"></asp:Button>
+                    
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn w3-medium w3-red w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey w3-right" runat="server" causesvalidation="False" autofocus="autofocus">Cancel</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 <script>
 // Get the modal
@@ -67,10 +67,8 @@ window.onclick = function(event) {
             <asp:ContentPlaceHolder ID="cphMainContent" runat="server"></asp:ContentPlaceHolder>
         </div>
         <!-- Footer -->
-        <footer class="w3-container w3-black w3-padding-30 w3-center w3-opacity">  
-
+        <footer class="w3-container w3-black w3-padding-45 w3-center w3-opacity">  
                 <h1 class="w3-margin w3-small">Meowntain is brought to you by Alex Harrison, Eric Sibley, and Gabriel Picarazzi with special thanks to Onyx, Pumpkin, Mango, Misty, and Hans!</h1>
-
         </footer>
     </div>
     </form>
